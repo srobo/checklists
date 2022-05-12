@@ -1,0 +1,14 @@
+{% for checklist in checklists -%}
+# {{ checklist.title }}
+{% if checklist.audience -%}
+For: {{ checklist.audience }}
+
+{% endif -%}
+{% for item in checklist.items -%}
+{% if item is string -%}
+  {{ item }}
+{% else -%}
+{{ item.call }} ..... {{ item.response }}
+{% endif -%}
+{% endfor -%}
+{% endfor -%}

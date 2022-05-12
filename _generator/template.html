@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Checklists</title>
+
+  <style>
+    @page {
+      size: {{ page_size|upper }};
+    }
+  </style>
+</head>
+
+<body>
+  <h1>SR Checklists</h1>
+  <img alt="SR logo" src="sr.svg">
+  {% for checklist in checklists %}
+  <article class="checklist">
+    <h2>{{ checklist.title }}</h2>
+  {% if checklist.audience %}
+    <p class="for">For: {{ checklist.audience }}</p>
+  {% endif %}
+    <table>
+    {% for item in checklist.items %}
+    {% if item is string %}
+      <tr>
+        <td colspan="2" class="note">{{ item }}</td>
+      </tr>
+    {% else %}
+      <tr>
+        <td>{{ item.call }}</td>
+        <td>{{ item.response }}</td>
+      </tr>
+    {% endif %}
+    {% endfor %}
+    </table>
+  </article>
+{% endfor %}
+</body>
+
+</html>
+    

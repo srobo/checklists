@@ -1,0 +1,4 @@
+ruamel.yaml
+weasyprint
+jinja2
+beautifulsoup4
