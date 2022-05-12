@@ -27,8 +27,10 @@ Item = Union[Checkpoint, Note]
 @dataclass(frozen=True)
 class Checklist:
     title: str
-    audience: Optional[str]
     items: Sequence[Item]
+    audience: Optional[str] = None
+    normal: bool = True
+    order: int = 0
 
 
 def load_checklist(f: IO[bytes]) -> Checklist:
@@ -46,10 +48,15 @@ def load_checklist(f: IO[bytes]) -> Checklist:
             call, response = item
             items.append(Checkpoint(call, response))
 
+    is_normal = bool(yaml_data.get("normal", True))
+    order = int(yaml_data.get("order", 0))
+
     return Checklist(
         title=title,
         audience=audience,
         items=items,
+        normal=is_normal,
+        order=order,
     )
 
 
@@ -172,6 +179,9 @@ def main():
     for path in root_path.glob("**/*.yaml"):
         with path.open() as f:
             checklists.append(load_checklist(f))
+
+    # Order: normal then non-normal, then follow explicit order
+    checklists.sort(key=lambda x: (not x.normal, x.order, x.title))
 
     template_name = TEMPLATES_BY_FORMAT[args.format]
 
