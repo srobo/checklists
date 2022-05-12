@@ -1,0 +1,8 @@
+title: Accident or injury
+audience: L2 warden
+normal: false
+items:
+  - [Paramedic, called over radio]
+  - "Non-urgent items:"
+  - [Event coördinator, consider contacting]
+  - [Health and safety coördinator, called over radio]

@@ -1,0 +1,13 @@
+title: End of day
+audience: L2 warden
+normal: true
+order: 1
+items:
+  - [Competitors, clear of area]
+  - [Power tools area, powered down]
+  - [External cube doors, closed as required]
+  - [Cube also clear, confirm with L2 warden]
+  - ["'Level 2 is clear' radio call", made]
+  - [Radio, returned to charger]
+  - [Event coördinator, briefed on any issues]
+  - [Clipboard, returned to Helpdesk]

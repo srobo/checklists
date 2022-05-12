@@ -1,0 +1,14 @@
+title: Start of group photo
+audience: L2 warden
+normal: true
+order: 4
+items:
+  - [Power tools area, powered down]
+  - [Plaza doors, opened]
+  - When the PA call is made:
+  - [Competitors and visitors,directed from bottom of stairs out to plaza]
+  - [Competitors, clear of area]
+  - [Cube also clear, confirm with L2 warden]
+  - ["'Level 2 is clear' radio call", made]
+  - Await radio instructions to leave for the photo from Event Coördinator
+  - [Plaza doors, closed]

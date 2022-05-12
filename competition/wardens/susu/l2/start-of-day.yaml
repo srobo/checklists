@@ -1,0 +1,9 @@
+title: Start of day
+audience: L2 warden
+normal: true
+order: 0
+items:
+  - [Clipboard, pick up from Helpdesk]
+  - [Radio, collect from charger]
+  - [Channel 1, selected]
+  - [Power tools area, check staffed]

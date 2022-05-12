@@ -1,0 +1,10 @@
+title: End of group photo
+audience: L2 warden
+normal: true
+order: 5
+items:
+  - [Plaza doors, closed with only volunteers allowed through]
+  - When instructed over radio by Event Coördinator:
+  - [Plaza doors, opened]
+  - [Power tools area, guard until volunteer arrives]
+
