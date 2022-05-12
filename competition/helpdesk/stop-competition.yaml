@@ -1,5 +1,6 @@
 title: Stop the competition call
 audience: Helpdesk staff
+normal: false
 items:
   - [Radio call, acknowledged]
   - [All helpdesk staff,informed]
