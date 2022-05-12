@@ -4,7 +4,69 @@
   <meta charset="utf-8">
   <title>Checklists</title>
 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://www.studentrobotics.org/style/css/main.css">
+  <link rel="shortcut icon" href="https://www.studentrobotics.org/style/images/favicon.ico">
+
   <style>
+    table {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    table th, table td {
+      padding: 0.1em 0.5em;
+    }
+
+    table thead {
+      color: #3270ed;
+    }
+
+    table th {
+      text-align: left;
+      border-bottom: 2px solid #3270ed;
+    }
+
+    table tr:nth-child(2n) {
+      background-color: #dfddde;
+    }
+
+    code {
+      font-size: 16px;
+    }
+    li {
+      margin-top: 0.2em;
+    }
+    li li {
+      margin-top: 0.1em;
+    }
+
+    img {
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .index-cell {
+      width: 1px;
+    }
+
+    .call {
+      width: 66%;
+    }
+
+    .call::after {
+      content: "...";
+      display: block;
+      float: right;
+    }
+
+    .response {
+      width: 33%;
+      font-weight: bold;
+    }
+
     @page {
       size: {{ page_size|upper }};
     }
@@ -12,29 +74,42 @@
 </head>
 
 <body>
-  <h1>SR Checklists</h1>
-  <img alt="SR logo" src="sr.svg">
+  <header>
+    <div class="fixed-width">
+      <h1><a id="top">Student Robotics QRH</a></h1>
+    </div>
+    <!--<img
+      src="https://www.studentrobotics.org/style/assets/logo.svg"
+      alt="Student Robotics"
+      width="200"
+      height="200"
+    >-->
+  </header>
   {% for checklist in checklists %}
-  <article class="checklist">
-    <h2>{{ checklist.title }}</h2>
-  {% if checklist.audience %}
-    <p class="for">For: {{ checklist.audience }}</p>
-  {% endif %}
-    <table>
-    {% for item in checklist.items %}
-    {% if item is string %}
-      <tr>
-        <td colspan="2" class="note">{{ item }}</td>
-      </tr>
-    {% else %}
-      <tr>
-        <td>{{ item.call }}</td>
-        <td>{{ item.response }}</td>
-      </tr>
+  <section class="checklist">
+    <div class="fixed-width">
+      <h2>{{ checklist.title }}</h2>
+    {% if checklist.audience %}
+      <p class="for">For: {{ checklist.audience }}</p>
     {% endif %}
-    {% endfor %}
-    </table>
-  </article>
+      <table class="checklist-items">
+      {% for item in checklist.items %}
+      {% if item is string %}
+        <tr>
+          <td class="index-cell">{{ loop.index }}</td>
+          <td colspan="2" class="note">{{ item }}</td>
+        </tr>
+      {% else %}
+        <tr>
+          <td class="index-cell">{{ loop.index }}</td>
+          <td class="call">{{ item.call }}</td>
+          <td class="response">{{ item.response }}</td>
+        </tr>
+      {% endif %}
+      {% endfor %}
+      </table>
+    </div>
+  </section>
 {% endfor %}
 </body>
 
