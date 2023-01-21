@@ -3,3 +3,7 @@ groups:
     checklists:
       - name: Health & Safety
         path: competition-pre-and-post/health-safety
+  - name: Pre-Kickstart
+    checklists:
+      - name: Health & Safety
+        path: kickstart-pre/health-safety
