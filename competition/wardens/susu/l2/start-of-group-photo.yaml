@@ -5,7 +5,7 @@ order: 4
 items:
   - [Power tools area, powered down]
   - [Plaza doors, opened]
-  - When the PA call is made:
+  - "When the PA call is made:"
   - [Competitors and visitors,directed from bottom of stairs out to plaza]
   - [Competitors, clear of area]
   - [Cube also clear, confirm with L2 warden]
