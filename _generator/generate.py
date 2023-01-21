@@ -67,7 +67,7 @@ def argument_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "checklist",
         type=Path,
-        help="Path to the checklist(s) to generate",
+        help="Path to the checklist directories to generate",
     )
     parser.add_argument(
         "-o",
