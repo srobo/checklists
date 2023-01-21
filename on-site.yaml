@@ -1,8 +1,10 @@
 groups:
-  - name: Pre-competition
+  - name: Competition phase
     checklists:
       - name: Health & Safety
         path: competition-pre-and-post/health-safety
+      - name: Media & Press
+        path: competition-pre-and-post/media
   - name: Pre-Kickstart
     checklists:
       - name: Health & Safety

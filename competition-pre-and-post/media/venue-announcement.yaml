@@ -1,0 +1,12 @@
+title: "Venue announcement: Media & Press"
+audience: Media & Press area owner
+normal: true
+order: 1
+items:
+  - [Event page, "checked and published per checklist"]
+  - [Announcement email, "sent"]
+  - [Discord announcement, "sent"]
+  - [Blog post, "published if applicable"]
+  - [Volunteer slack message, "sent"]
+  - [Volunteer email, "sent"]
+  - [Social media, "updated as applicable"]

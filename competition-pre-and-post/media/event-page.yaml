@@ -1,0 +1,11 @@
+title: "Venue event page"
+audience: Media & Press area owner
+normal: true
+order: 2
+items:
+  - [Event date, "checked and included"]
+  - [Event location, "checked and included"]
+  - [Parking locations, "checked and included"]
+  - [Venue map, "included if available"]
+  - [Day schedule, "checked and included"]
+  - [Nearby food locations, "checked and included"]
