@@ -113,6 +113,12 @@ def argument_parser() -> argparse.ArgumentParser:
         help="Output as A4 paper",
     )
     parser.add_argument(
+        "--title",
+        type=str,
+        help="Title to use for the document",
+        default="Student Robotics QRH",
+    )
+    parser.add_argument(
         "--beautify",
         action="store_true",
         dest="beautify",
@@ -193,6 +199,7 @@ def main():
     template = jinja_environment.get_template(template_name)
 
     rendered_template = template.render(
+        title=args.title,
         checklists=checklists,
         page_size=args.size,
     )

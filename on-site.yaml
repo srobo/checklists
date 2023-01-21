@@ -1,0 +1,5 @@
+groups:
+  - name: Pre-competition
+    checklists:
+      - name: Health & Safety
+        path: competition-pre-and-post/health-safety

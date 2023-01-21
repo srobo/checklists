@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SR Checklists</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://www.studentrobotics.org/style/css/main.css">
+  <link rel="shortcut icon" href="https://www.studentrobotics.org/style/images/favicon.ico">
+</head>
+<body>
+  <header>
+    <div class="fixed-width">
+      <h1><a id="top">SR Checklists</a></h1>
+    </div>
+  </header>
+  {% for group_name, checklists in groups %}
+  <section class="group">
+    <div class="fixed-width">
+      <h2>{{ group_name }}</h2>
+      <ul>
+        {% for checklist_name, checklist_path in checklists %}
+          <li><a href="{{ checklist_path }}">{{ checklist_name }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+  {% endfor %}
+</body>
+</html>
